@@ -3,5 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def UsersIndex(request):
-    return HttpResponse('<h1>Страница приложения Пользователя</h1>')
+def UsersIndex(request, users_page):
+    if request.GET:
+        print(request.GET)
+
+    return HttpResponse(f'<h1>Страница приложения Пользователей</h1><p>{users_page}</p>')

@@ -3,5 +3,5 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', UsersIndex),
+    path('users/<slug:users_page>/', UsersIndex),
 ]

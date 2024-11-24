@@ -17,12 +17,15 @@ Including another URLconf
 from django.contrib import admin
 
 from django.urls import include, path
-
+from core.views import PageNotFound
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
     path('cart/', include('cart.urls')),
     path('catalog/', include('catalog.urls')),
     path('orders/', include('orders.urls')),
     path('users/', include('users.urls')),
 ]
+
+handler404 = PageNotFound
