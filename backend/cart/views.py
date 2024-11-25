@@ -3,5 +3,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def CartIndex(request):
-    return HttpResponse('<h1>Страница приложения Корзины</h1>')
+def cartIndex(request):
+    return render(request, '<h1>Страница приложения Корзины</h1>')

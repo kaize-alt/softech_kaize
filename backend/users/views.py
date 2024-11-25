@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def UsersIndex(request, users_page):
+def usersIndex(request, users_page):
     if request.GET:
         print(request.GET)
 

@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def CatalogIndex(request, catalog_name ):
+def catalogIndex(request, catalog_name ):
     if request.GET:
         print(request.GET)
 

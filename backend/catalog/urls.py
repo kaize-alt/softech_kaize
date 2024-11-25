@@ -3,5 +3,5 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('catalog/<slug:catalog_name>/', CatalogIndex),
+    path('catalog/<slug:catalog_name>/', catalogIndex),
 ]

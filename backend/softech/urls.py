@@ -17,21 +17,26 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 from django.urls import include, path
-from core.views import PageNotFound
+from core.views import pageNotFound
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('cart/', include('cart.urls')),
-    path('catalog/', include('catalog.urls')),
-    path('orders/', include('orders.urls')),
-    path('users/', include('users.urls')),
+    path('', include('cart.urls')),
+    path('', include('catalog.urls')),
+    path('', include('orders.urls')),
+    path('', include('users.urls')),
+
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='docs'), 
+
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
-handler404 = PageNotFound
+handler404 = pageNotFound
 
