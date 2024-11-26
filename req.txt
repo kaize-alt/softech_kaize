@@ -7,3 +7,4 @@ psycopg2
 Pillow
 drf-spectacular
 pyTelegramBotAPI
+python-decouple
